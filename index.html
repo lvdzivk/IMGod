@@ -9,7 +9,7 @@
 <body>
     <div class="parent">
         <div class="header"><h1>IMGod - Image overwrite & destroy</h1></div>
-        <div class="uploadPreviewPanel"><h1 onclick="">upload</h1></div>
+        <div class="uploadPreviewPanel" id="previewArea"><h1 onclick="">upload</h1></div>
         <div class="controlPanel">
             <button id="wipeButtom">Wipe Metadata</button>
             <button id="downloadButton">Download Image</button>
@@ -21,7 +21,7 @@
         <div class="metadataList"><h1>metadata list</h1></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/exifr@8/dist/full.umd.js"></script>
+    <script src="https://unpkg.com/exifr/dist/full.umd.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
