@@ -13,6 +13,7 @@
     grid-row-gap: 5px;
     color: #252525ff;
     justify-self: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .header { grid-area: 1 / 1 / 2 / 3; }
