@@ -1,32 +1,30 @@
 ## Description
-IMGod is web application that is helping user with amending images matadata or deleting them completly.
+IMGod is a web application that helps users amend image metadata or delete it completely.
 
 ## Tech Stack
 - HTML
 - CSS
 - JavaScript
-- 
-- 
 
-## Instalation
-1. git clone 
-2. 
-3. 
+## Installation
+1. git clone
+2.
+3.
 
 ## Usage
 1. Access [....]
-2. Drag and drop image inside the designated area or press LMB on the area to manualy choose directory of the image.
+2. Drag and drop an image into the designated area or press LMB on the area to manually choose the image directory.
 
 ## Roadmap
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
-## License 
+## License
 MIT
 
 ## Author
