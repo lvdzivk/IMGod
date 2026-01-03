@@ -38,7 +38,7 @@ fileInput.addEventListener('change', function(event) {
         }).then(function(meta) {
             document.querySelector('.metadataList').innerHTML = '';
 
-            currentMeta - meta;
+            currentMeta = meta;
 
             //loop for checking all information and returing them
             for (let key in meta) {

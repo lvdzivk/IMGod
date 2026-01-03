@@ -29,8 +29,8 @@ button {
     width: 180px;
     align-self: center;
     border-radius: 25px;
-    border: 1px solid #252525ff;
-    background-color: #d9d9d9ff;
+    border: 2px solid #d9d9d9ff;
+    background-color: #fff8e4ff;
     color: #252525ff;
     font-size: 12px;
     cursor: pointer;
@@ -51,6 +51,7 @@ button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    text-align: center;
 }
 
 .controlPanel {
