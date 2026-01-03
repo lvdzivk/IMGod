@@ -78,10 +78,26 @@ document.getElementById('wipeButton').addEventListener('click', function() {
         // Save as new file
         canvas.toBlob(function(blob) {
             console.log('Clean image:', blob.size, 'bytes');
-            currentCleanBlob - blob;
+            currentCleanBlob = blob;
         }, 'image/jpeg', 0.95); // Quality 95%
     };
 
     img.src = URL.createObjectURL(currentFile);
 });
 
+document.getElementById('downloadButton').addEventListener('click', function() {
+    if (!currentCleanBlob) {
+        alert('First wipe metadata.');
+        return;
+    }
+
+    // Creates download link
+    const url = URL.createObjectURL(currentCleanBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `IMGod-cleaned-${currentFile.name}.jpg` // file name with suffix
+    document.body.appendChild(a);
+    a.click(); // auto-download
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url); // cleanup
+});
