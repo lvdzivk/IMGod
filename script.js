@@ -56,7 +56,7 @@ fileInput.addEventListener('change', function(event) {
     reader.readAsArrayBuffer(file);
 });
 
-document.getElementById('wipeButtom').addEventListener('click', function() {
+document.getElementById('wipeButton').addEventListener('click', function() {
     if (!currentFile) {
         alert('Upload image first!')
         return;
