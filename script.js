@@ -21,6 +21,21 @@ fileInput.addEventListener('change', function(event) {
 
         currentFile = file;
 
+        // clean uploadPreviewPanel previous content
+        const previewPanel = document.querySelector('.uploadPreviewPanel');
+        previewPanel.innerHTML = '';
+
+        // Create img element for preview
+        const previewImg = document.createElement('img');
+        previewImg.src = URL.createObjectURL(file);
+        previewImg.style.maxWidth = '90%';
+        previewImg.style.maxHeight = '90%';
+        previewImg.style.objectFit = 'contain';
+        previewImg.style.borderRadius = '18px'; // Fit border-radius of cell
+
+        // Add thumbnail to panel
+        previewPanel.appendChild(previewImg);
+
     // file reading
     const reader = new FileReader();
 
