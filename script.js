@@ -94,6 +94,7 @@ document.getElementById('wipeButton').addEventListener('click', function() {
         canvas.toBlob(function(blob) {
             console.log('Clean image:', blob.size, 'bytes');
             currentCleanBlob = blob;
+            document.querySelector('.metadataList').innerHTML = `<div><strong>Cleaning completed.</strong><br> File Name: ${currentFile.name}<br>New Size: ${currentCleanBlob.size} Bytes</div>`;
         }, 'image/jpeg', 0.95); // Quality 95%
     };
 
