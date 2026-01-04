@@ -1,20 +1,27 @@
-/*--pine-teal: #0f534bff; - oliwkowy
---ivory-mist: #fff8e4ff; - kremowy
---white: #F8F8F8; - biały
---alabaster-grey: #d9d9d9ff; - jasny szary
---grey-olive: #909090ff; - ciemny szary
---carbon-black: #252525ff; - czarny */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+html {
+    background-color: #cac0b4;
+    background-image:  radial-gradient(#8c8375 0.8px, transparent 0.8px), radial-gradient(#8c8375 0.8px, #cac0b4 0.8px);
+    background-size: 32px 32px;
+    background-position: 0 0,16px 16px;
+}
+
+body {
+
+    display: flexbox;
+    justify-self: center;
+}
 
 .parent {
     display: grid;
     grid-template-columns: 375px 375px;
     grid-template-rows: 75px 325px 175px;
     grid-column-gap: 10px;
-    grid-row-gap: 5px;
+    grid-row-gap: 9px;
     color: #252525ff;
-    justify-self: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-top: 50px;
+    font-family: 'Rubik', 'Times New Roman', Times, serif;
+    padding-top: 70px;
 }
 
 .header { grid-area: 1 / 1 / 2 / 3; }
@@ -26,25 +33,52 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 52px;
     width: 180px;
     align-self: center;
-    border-radius: 25px;
-    border: 2px solid #d9d9d9ff;
-    background-color: #fff8e4ff;
-    color: #252525ff;
+    border-radius: 26px;
+    border: 2px solid #422800;
+    background-color: #fbeee0;
+    color: #422800;
     font-size: 15px;
     cursor: pointer;
+    box-shadow: #422800 1px 3px 0 0;
+    font-family: 'Rubik';
+    font-weight: 600;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
 }
 
 .header, .uploadPreviewPanel, .metadataList {
-    border: 2px solid #d9d9d9ff;
-    background-color: #fff8e4ff;
+    border: 2px solid #422800;
+    background-color: #fbeee0;
     border-radius: 20px;
+    box-shadow: #422800 1px 3px 0 0;
 }
 
 .header {
-    text-align: center;
+    margin-right: 100px ;
+    padding-left: 50px;
+    text-align: start;
+    font-family: 'Rubik';
+    font-weight: 800;
+    font-size: xx-large;
+    align-content: center;
+}
+
+.uploadPreviewPanel, .metadataList {
+    margin-top: 15px;
 }
 
 .uploadPreviewPanel {
@@ -55,19 +89,32 @@ button {
     text-align: center;
 }
 
+.uploadPreviewPanel.dragover {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+    outline: 2px dashed #84a98c !important;
+    background: #d3e2c4 !important;
+}
+
+.uploadPreviewPanel:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
 .controlPanel {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-content: space-between;
 }
 
 .metadataList {
-    height: 100%;
     max-height: 480px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 10px;
     padding-right: 8px;
+    padding-left: 8px;
     scrollbar-width: thin;
     scrollbar-color: #909090 transparent;
 }
@@ -76,4 +123,7 @@ button {
     text-align: center;
     padding-top: 15px;
     font-size: 10pt;
+    font-family: 'Rubik';
+    color: #422800;
 }
+

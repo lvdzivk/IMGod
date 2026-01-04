@@ -10,15 +10,75 @@ fileInput.accept = 'image/*';
 fileInput.style.display = 'none';
 document.body.appendChild(fileInput);
 
-// Opens a file uploading window
+// Drag & drop file 
+const previewPanel = document.querySelector('.uploadPreviewPanel');
+
+// Highlight feedback
+function highlight() {
+  previewPanel.classList.add('dragover');
+}
+function unhighlight() {
+  previewPanel.classList.remove('dragover');
+}
+
+// Upload number limit
+const MAX_FILES = 1;
+
+// Drop 
+['dragenter', 'dragover'].forEach(eventName => {
+    previewPanel.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        highlight();
+    });
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    previewPanel.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        unhighlight();
+    });
+});
+
+// Handle drop
+previewPanel.addEventListener('drop', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const files = e.dataTransfer.files;
+    if (!files || !files.length) return;
+
+    if (files.length > MAX_FILES) {
+        alert(`Only ${MAX_FILES} file(s) allowed! (got ${files.length})`);
+        return;
+    }
+
+    const file = files[0];
+    // Filter only image type of file
+    if (!file.type.startsWith('image/')) {
+        alert('Only image files allowed!');
+        return;
+    }
+
+    // Reuse flow 
+    handleFile(file);
+});
+
+
+// File uploading window
 document.querySelector('.uploadPreviewPanel').addEventListener('click', function() {
     fileInput.click();
 });
 
+// Reading metadata logic
 fileInput.addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (!file) return;
+    handleFile(file);
+});
 
+function handleFile(file) {
         currentFile = file;
 
         // clean uploadPreviewPanel previous content
@@ -69,8 +129,9 @@ fileInput.addEventListener('change', function(event) {
     };
 
     reader.readAsArrayBuffer(file);
-});
+}
 
+// Wiping metadata logic
 document.getElementById('wipeButton').addEventListener('click', function() {
     if (!currentFile) {
         alert('Upload image first!')
@@ -101,6 +162,7 @@ document.getElementById('wipeButton').addEventListener('click', function() {
     img.src = URL.createObjectURL(currentFile);
 });
 
+// Downloading results
 document.getElementById('downloadButton').addEventListener('click', function() {
     if (!currentCleanBlob) {
         alert('First wipe metadata.');
