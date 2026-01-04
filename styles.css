@@ -14,7 +14,7 @@ body {
 
 .parent {
     display: grid;
-    grid-template-columns: 375px 375px;
+    grid-template-columns: 375px 525px;
     grid-template-rows: 75px 325px 175px;
     grid-column-gap: 10px;
     grid-row-gap: 9px;
@@ -50,6 +50,10 @@ button {
     touch-action: manipulation;
 }
 
+.buttonWide {
+    width: 375px;
+}
+
 button:hover {
     background-color: #fff;
 }
@@ -67,7 +71,7 @@ button:active {
 }
 
 .header {
-    margin-right: 100px ;
+    margin-right: 250px ;
     padding-left: 50px;
     text-align: start;
     font-family: 'Rubik';
