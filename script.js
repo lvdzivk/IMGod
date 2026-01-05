@@ -145,7 +145,7 @@ function handleFile(file) {
     reader.readAsArrayBuffer(file);
 }
 
-// Wiping metadata logic
+// Wiping metadata and downloading results logic
 document.getElementById('wipeButton').addEventListener('click', function() {
     if (!currentFile) {
         alert('Upload image first!');
@@ -170,10 +170,14 @@ document.getElementById('wipeButton').addEventListener('click', function() {
             console.log('Clean image:', blob.size, 'bytes');
             currentCleanBlob = blob;
             document.querySelector('.metadataList').innerHTML = `<div><strong>Cleaning completed.</strong><br> File Name: ${currentFile.name}<br>New Size: ${currentCleanBlob.size} Bytes</div>`;
+
+            downloadBlob(currentCleanBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}`);
+
         }, 'image/jpeg', 0.95); // Quality 95%
     };
 
     img.src = URL.createObjectURL(currentFile);
+    
 });
 
 // Exporting to JSON
@@ -210,17 +214,6 @@ document.getElementById('exportCSV').addEventListener('click', function() {
     const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 
     downloadBlob(csvBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}-metadata.csv`);
-
-});
-
-// Downloading results
-document.getElementById('downloadButton').addEventListener('click', function() {
-    if (!currentCleanBlob) {
-        alert('First wipe metadata.');
-        return;
-    }
-
-    downloadBlob(currentCleanBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}`);
 
 });
 
