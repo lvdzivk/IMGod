@@ -181,6 +181,22 @@ document.getElementById('exportCSV').addEventListener('click', function() {
         alert('Upload and parse image first!');
         return;
     }
+
+    // Header row
+    const headers = Object.keys(currentMeta);
+    let csvContent = headers.join(',') + '\n';
+
+    // Values row (flattens nested objects)
+    const values = headers.map(key => {
+        const val = currentMeta[key];
+        return typeof val === 'object' ? JSON.stringify(val) : val;
+    });
+    csvContent += values.join(',') + '\n';
+
+    const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+
+    downloadBlob(csvBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}-metadata.csv`);
+
 });
 
 // Downloading results
@@ -191,16 +207,7 @@ document.getElementById('downloadButton').addEventListener('click', function() {
     }
 
     downloadBlob(currentCleanBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}`);
-
-    // // Creates download link
-    // const url = URL.createObjectURL(currentCleanBlob);
-    // const a = document.createElement('a');
-    // a.href = url;
-    // a.download = `IMGod-cleaned-${currentFile.name}.jpg` // file name with suffix
-    // document.body.appendChild(a);
-    // a.click(); // auto-download
-    // document.body.removeChild(a);
-    // URL.revokeObjectURL(url); // cleanup
+    
 });
 
 // Credits button
