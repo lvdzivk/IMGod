@@ -162,6 +162,27 @@ document.getElementById('wipeButton').addEventListener('click', function() {
     img.src = URL.createObjectURL(currentFile);
 });
 
+// Exporting to JSON
+document.getElementById('exportJSON').addEventListener('click', function() {
+    if (!currentMeta) {
+        alert('Upload and parse image first!');
+        return;
+    }
+
+    const jsonStr = JSON.stringify(currentMeta, null, 2);
+    const jsonBlob = new Blob([jsonStr, { type: 'application/json' }]);
+
+    downloadBlob(jsonBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}-metadata.json`);
+});
+
+// Exporting to CSV
+document.getElementById('exportCSV').addEventListener('click', function() {
+    if (!currentMeta) {
+        alert('Upload and parse image first!');
+        return;
+    }
+});
+
 // Downloading results
 document.getElementById('downloadButton').addEventListener('click', function() {
     if (!currentCleanBlob) {
@@ -169,13 +190,31 @@ document.getElementById('downloadButton').addEventListener('click', function() {
         return;
     }
 
-    // Creates download link
-    const url = URL.createObjectURL(currentCleanBlob);
+    downloadBlob(currentCleanBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}`);
+
+    // // Creates download link
+    // const url = URL.createObjectURL(currentCleanBlob);
+    // const a = document.createElement('a');
+    // a.href = url;
+    // a.download = `IMGod-cleaned-${currentFile.name}.jpg` // file name with suffix
+    // document.body.appendChild(a);
+    // a.click(); // auto-download
+    // document.body.removeChild(a);
+    // URL.revokeObjectURL(url); // cleanup
+});
+
+// Credits button
+document.getElementById('credits').addEventListener('click', function() {
+    console.log('credits clicked');
+});
+
+function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `IMGod-cleaned-${currentFile.name}.jpg` // file name with suffix
+    a.download = filename;
     document.body.appendChild(a);
-    a.click(); // auto-download
+    a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url); // cleanup
-});
+    URL.revokeObjectURL(url);
+}

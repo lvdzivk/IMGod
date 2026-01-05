@@ -1,5 +1,5 @@
 ## Description
-IMGod is a web application that allows user to view, amend or delete image metadata to improve privacy and control over shared photos.
+IMGod is a web application that allows user to view, export or delete image metadata to improve privacy over shared photos.
 
 ## Tech Stack
 - HTML5
@@ -21,11 +21,11 @@ IMGod is a web application that allows user to view, amend or delete image metad
 
 ## Roadmap
 - [X] Single image upload, viewing metadata and deleting
+- [ ] Export metadata to JSON/CSV
 - [ ] Multiple images batch processing
-- [ ] Selective metadata deletion/editing
+- [ ] Improved metadata presentation
 - [ ] GPS coordinates -> Maps preview
 - [ ] Theme toggle 
-- [ ] Export metadata to JSON/CSV
 - [ ] PWA app
 
 ## License
