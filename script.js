@@ -111,11 +111,25 @@ function handleFile(file) {
             iptc: true,
             xmp: true
         }).then(function(meta) {
-            document.querySelector('.metadataList').innerHTML = '';
+            const metadataList = document.querySelector('.metadataList');
+            metadataList.innerHTML = '';
+
+            if (!meta || Object.keys(meta).length === 0) {
+                metadataList.innerHTML = '<div style="text-align: center; padding: 20px; font-weight: 500;">This file contains no metadata to show or destroy.</div>';
+                currentMeta === null;
+                document.getElementById('wipeButton').disabled = true;
+                document.getElementById('exportJSON').disabled = true;
+                document.getElementById('exportCSV').disabled = true;
+                return;
+            }
 
             currentMeta = meta;
+            document.getElementById('wipeButton').disabled = false;
+            document.getElementById('exportJSON').disabled = false;
+            document.getElementById('exportCSV').disabled = false;
+            
 
-            //loop for checking all information and returing them
+            // loop for checking all information and returing them
             for (let key in meta) {
                 if (meta[key]) {
                     const div = document.createElement('div');
@@ -134,7 +148,7 @@ function handleFile(file) {
 // Wiping metadata logic
 document.getElementById('wipeButton').addEventListener('click', function() {
     if (!currentFile) {
-        alert('Upload image first!')
+        alert('Upload image first!');
         return;
     }
 
@@ -207,12 +221,22 @@ document.getElementById('downloadButton').addEventListener('click', function() {
     }
 
     downloadBlob(currentCleanBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}`);
-    
+
 });
 
-// Credits button
+// Credits modal
 document.getElementById('credits').addEventListener('click', function() {
-    console.log('credits clicked');
+    document.getElementById('modalOverlay').classList.add('active');
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('modalOverlay').classList.remove('active');
+});
+
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.classList.remove('active');
+    }
 });
 
 function downloadBlob(blob, filename) {

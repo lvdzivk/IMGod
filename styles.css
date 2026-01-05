@@ -63,6 +63,12 @@ button:active {
     transform: translate(2px, 2px);
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
 .header, .uploadPreviewPanel, .metadataList {
     border: 2px solid #422800;
     background-color: #fbeee0;
@@ -71,7 +77,7 @@ button:active {
 }
 
 .header {
-    margin-right: 250px ;
+    margin-right: 335px ;
     padding-left: 50px;
     text-align: start;
     font-family: 'Rubik';
@@ -131,3 +137,54 @@ button:active {
     color: #422800;
 }
 
+.modalOverlay {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(66, 40, 0, 0.5);  
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalOverlay.active {
+    display: flex;  
+}
+
+.modalContent {
+    background: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 20px;
+    box-shadow: #422800 1px 3px 0 0;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    padding: 20px;
+}
+
+.modalHeader {
+    font-family: 'Rubik';
+    font-weight: 800;
+    font-size: xx-large;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 2px solid #422800;
+    margin-bottom: 15px;
+}
+
+.modalBody {
+    font-family: 'Rubik';
+    font-weight: 500;
+    padding: 10px;
+    line-height: 1.5;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.modalButton {
+    width: 100%;
+    margin-top: 15px;
+}
