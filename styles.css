@@ -16,7 +16,7 @@ body {
 .parent {
     display: grid;
     grid-template-columns: 375px 525px;
-    grid-template-rows: 75px 325px 175px;
+    grid-template-rows: 75px 325px 113px;
     grid-column-gap: 10px;
     grid-row-gap: 9px;
     color: #422800;
@@ -35,7 +35,7 @@ button {
     align-items: center;
     justify-content: center;
     height: 52px;
-    width: 180px;
+    width: 154px;
     align-self: center;
     border-radius: 26px;
     border: 2px solid #422800;
@@ -54,6 +54,14 @@ button {
 
 .buttonWide {
     width: 375px;
+}
+
+.buttonCircle {
+    width: 52px;
+    border-radius: 26px;
+    font-size: 18px;
+    font-weight: 450;
+    padding-top: 4px;
 }
 
 button:hover {
@@ -80,7 +88,7 @@ button:disabled {
 }
 
 .header {
-    margin-right: 335px ;
+    margin-right: 275px ;
     padding-left: 50px;
     text-align: start;
     font-family: "Sour Gummy";
@@ -100,7 +108,6 @@ button:disabled {
     cursor: pointer;
     text-align: center;
     font-weight: 550;
-    font-style: italic;
 }
 
 .uploadPreviewPanel.dragover {
@@ -164,19 +171,20 @@ button:disabled {
     border-radius: 20px;
     box-shadow: #422800 1px 3px 0 0;
     width: 90%;
-    max-width: 500px;
+    max-width: 530px;
     max-height: 80vh;
     padding: 20px;
 }
 
 .modalHeader {
-    font-family: 'Rubik';
-    font-weight: 800;
-    font-size: xx-large;
+    font-family: "Sour Gummy";
+    font-weight: 520;
+    font-size: 29px;
     padding: 10px 0;
     text-align: center;
     border-bottom: 2px solid #422800;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 .modalBody {
@@ -184,7 +192,7 @@ button:disabled {
     font-weight: 500;
     padding: 10px;
     line-height: 1.5;
-    max-height: 300px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
@@ -193,7 +201,22 @@ button:disabled {
     margin-top: 15px;
 }
 
-.ul {
+.ul, u, a { 
     text-decoration-style: wavy;
-    text-decoration-thickness: 0.1mm;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #422800;
+    color: #422800;
+}
+
+.ul {
+    font-style: italic;
+}
+
+a {
+    color: #9b610a;
+}
+
+.ul:hover, a:hover {
+    color: #84a98c;
 }

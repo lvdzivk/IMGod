@@ -91,7 +91,7 @@ function handleFile(file) {
         previewImg.style.maxWidth = '90%';
         previewImg.style.maxHeight = '90%';
         previewImg.style.objectFit = 'contain';
-        previewImg.style.borderRadius = '18px'; // Fit border-radius of cell
+        previewImg.style.borderRadius = '18px';
 
         // Add thumbnail to panel
         previewPanel.appendChild(previewImg);

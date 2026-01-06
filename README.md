@@ -7,8 +7,6 @@ IMGod is a web application that allows user to view, export or delete image meta
 - Vanilla JavaScript
 - exifr (EXIF/IPTC/XMP parsing)
 - FileReader API / Canvas API
-- Flatpickr (date picker)
-- Tippy.js (tooltips)
 
 ## Installation
 1. git clone
@@ -21,7 +19,7 @@ IMGod is a web application that allows user to view, export or delete image meta
 
 ## Roadmap
 - [X] Single image upload, viewing metadata and deleting
-- [ ] Export metadata to JSON/CSV
+- [X] Export metadata to JSON/CSV
 - [ ] Multiple images batch processing
 - [ ] Improved metadata presentation
 - [ ] GPS coordinates -> Maps preview

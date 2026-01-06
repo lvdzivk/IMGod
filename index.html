@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="parent">
-        <div class="header">IMGod - Image obey & destroy</div>
+        <div class="header">IMGod - Image observer & destroyer</div>
         <div class="uploadPreviewPanel" id="previewArea">
             <div>
                 Drag and drop file or<br><u class="ul">click here</u> to upload your image.
@@ -17,17 +17,27 @@
         <div class="controlPanel">
             <button class="buttonWide" id="wipeButton">Destroy Metadata and Download Image</button>
             <!-- <button id="downloadButton">Download Image</button> -->
-            <button id="exportJSON">Export<br> metadata to JSON</button>
-            <button id="exportCSV">Export<br> metadata to CSV</button>
-            <button class="buttonWide" id="credits">Credits</button>
+            <button id="exportJSON">Export<br>to JSON</button>
+            <button id="exportCSV">Export<br>to CSV</button>
+            <button class="buttonCircle" id="credits">?</button>
         </div>
         <div class="metadataList"></div>
         <div class="modalOverlay" id="modalOverlay">
             <div class="modalContent">
-                <div class="modalHeader">Credits</div>
+                <div class="modalHeader">IMGod - Image observer & destroyer</div>
                 <div class="modalBody">
-                    <p>IMGod - Image obey & destroy</p>
-                    <p>-------</p>
+                    <p>IMGod is a web application that allows user to<br>view, export or delete image metadata to<br>improve privacy over shared photos.</p>
+                    <p>------------------------------------------------------------------</p>
+                    <p>Made in <a href='https://en.wikipedia.org/wiki/United_Kingdom' target="_blank" rel="noopener noreferrer">UK</a> with <br>
+                    <a href='https://en.wikipedia.org/wiki/HTML' target="_blank" rel="noopener noreferrer">HTML</a><br>
+                    <a href='https://en.wikipedia.org/wiki/CSS' target="_blank" rel="noopener noreferrer">CSS</a><br>
+                    <a href='https://en.wikipedia.org/wiki/JavaScript' target="_blank" rel="noopener noreferrer">JavaScript</a><br
+                    ><a href='https://github.com/MikeKovarik/exifr' target="_blank" rel="noopener noreferrer">EXIFR</a></p>
+                    
+                    <p>If you liked my project and would like to <br>
+                    support my further development,<br>
+                    you can <a href='https://buymeacoffee.com/marcinladzb' target="_blank" rel="noopener noreferrer">buy me a coffee</a> :)</p>
+                    
                     <!-- fill out later -->
                 </div>
                 <button id="closeModal" class="modalButton">Close</button>
