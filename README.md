@@ -1,6 +1,8 @@
 ## Description
 IMGod is a web application that allows user to view, export or delete image metadata to improve privacy over shared photos.
 
+[IMGod GUI](https://i.ibb.co/SwpyM4qS/IMGod-README.jpg)
+
 ## Tech Stack
 - HTML5
 - CSS3 / Flexbox + Grid
