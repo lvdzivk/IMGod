@@ -14,8 +14,8 @@ IMGod is a web application that allows user to view, export or delete image meta
 
 ## Installation
 1. git clone
-2.
-3.
+2. open index.html with browser
+3. 
 
 ## Usage
 1. Access [....]
