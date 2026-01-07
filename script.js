@@ -116,7 +116,7 @@ function handleFile(file) {
 
             if (!meta || Object.keys(meta).length === 0) {
                 metadataList.innerHTML = '<div style="text-align: center; padding: 20px; font-weight: 500;">This file contains no metadata to show or destroy.</div>';
-                currentMeta === null;
+                currentMeta = null;
                 document.getElementById('wipeButton').disabled = true;
                 document.getElementById('exportJSON').disabled = true;
                 document.getElementById('exportCSV').disabled = true;

@@ -16,7 +16,7 @@ body {
 .parent {
     display: grid;
     grid-template-columns: 375px 525px;
-    grid-template-rows: 75px 325px 113px;
+    grid-template-rows: 75px 425px 113px;
     grid-column-gap: 10px;
     grid-row-gap: 9px;
     color: #422800;
@@ -130,7 +130,7 @@ button:disabled {
 }
 
 .metadataList {
-    max-height: 480px;
+    max-height: 510px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 10px;
@@ -220,3 +220,62 @@ a {
 .ul:hover, a:hover {
     color: #84a98c;
 }
+
+@media (max-width: 1000px) {
+.parent {
+    display: grid;
+    grid-template-columns: 190px 230px;
+    grid-template-rows: 65px 190px 520px;
+    grid-column-gap: 10px;
+    grid-row-gap: 9px;
+}
+
+.header { grid-area: 1 / 1 / 2 / 3; }
+.uploadPreviewPanel { grid-area: 2 / 1 / 3 / 2; }
+.controlPanel { grid-area: 2 / 2 / 3 / 3; }
+.metadataList { grid-area: 3 / 1 / 4 / 3; }
+
+.header {
+    margin-right: 0px ;
+    padding-left: 20px;
+    text-align: start;
+    font-family: "Sour Gummy";
+    font-weight: 500;
+    font-size: 17pt;
+    align-content: center;
+    padding-bottom: px;
+    margin-bottom: 15px;
+}
+
+button {
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    width: 230px;
+    align-self: center;
+    font-size: 14px;
+    line-height: 1.0;
+}
+
+.controlPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.uploadPreviewPanel {
+    margin: 0px;
+}
+
+#credits {
+    order: -1;
+}
+
+.buttonWide {
+    width: 170px;
+}
+
+}
+
