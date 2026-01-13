@@ -188,7 +188,7 @@ document.getElementById('exportJSON').addEventListener('click', function() {
     }
 
     const jsonStr = JSON.stringify(currentMeta, null, 2);
-    const jsonBlob = new Blob([jsonStr, { type: 'application/json' }]);
+    const jsonBlob = new Blob([jsonStr], { type: 'application/json' });
 
     downloadBlob(jsonBlob, `IMGod-${currentFile.name.replace(/\.[^/.]+$/, "")}-metadata.json`);
 });
